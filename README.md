@@ -252,7 +252,7 @@ Example output:
 A short video demonstrating the entire workflow is available here:
 
 ```text
-https://youtu.be/oHmKKz1JZwc
+https://github.com/user-attachments/assets/4896b658-9701-48fa-af28-c9316e2e185e
 ```
 
 ---
