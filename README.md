@@ -10,11 +10,11 @@ The plugin resolves imported API function pointers stored in manually mapped or 
 
 Many modern malware families do not contain a valid PE Import Address Table (IAT). Instead, they:
 
-* Manually map DLLs.
-* Resolve imported APIs dynamically.
-* Store imported functions as raw pointers.
-* Inject PE-less payloads into RWX VAD regions.
-* Use custom loaders or shellcode to bypass standard PE loading mechanisms.
+* Manually map DLLs
+* Resolve imported APIs dynamically
+* Store imported functions as raw pointers
+* Inject PE-less payloads into RWX VAD regions
+* Use custom loaders or shellcode to bypass standard PE loading mechanisms
 
 As a result, imported functions are displayed in IDA Pro as anonymous `qword` values.
 
@@ -52,29 +52,29 @@ LOBYTE(v9) = VirtualProtect(a1,a2,v8,*a3,v15,&a8) != 0;
 
 ## Features
 
-* Automatic PE-less import restoration.
-* Support for IDA Pro 9.2.
-* Binary search over compressed databases.
-* User-generated import databases.
-* Support for multiple DLL libraries.
-* ZLIB-compressed binary storage.
-* Resolve imports at the current cursor address.
-* Resolve imports for a selected memory range.
-* Fast address lookups using absolute virtual addresses.
+* Automatic PE-less import restoration
+* Support for IDA Pro 9.2
+* Binary search over compressed databases
+* User-generated import databases
+* Support for multiple DLL libraries
+* ZLIB-compressed binary storage
+* Resolve imports at the current cursor address
+* Resolve imports for a selected memory range
+* Fast address lookups using absolute virtual addresses
 
 ---
 
 ## Typical Workflow
 
-1. Obtain a memory dump of the infected machine.
-2. Identify the target process.
-3. Dump the injected RWX VAD region.
-4. Obtain DLL ImageBases using Volatility.
-5. Dump DLLs from the same memory image or copy them from the infected machine.
-6. Generate the import database.
-7. Load the VAD dump into IDA Pro.
-8. Load the plugin.
-9. Resolve imported API addresses.
+1. Obtain a memory dump of the infected machine
+2. Identify the target process
+3. Dump the injected RWX VAD region
+4. Obtain DLL ImageBases using Volatility
+5. Dump DLLs from the same memory image or copy them from the infected machine
+6. Generate the import database
+7. Load the VAD dump into IDA Pro
+8. Load the plugin
+9. Resolve imported API addresses
 
 The plugin is intended to be used with DLLs originating from the same memory image or infected system. Therefore, no OS-specific databases are required.
 
