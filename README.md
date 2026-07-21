@@ -6,7 +6,7 @@ The plugin resolves imported API function pointers stored in manually mapped or 
 
 ---
 
-## Motivation
+## Description
 
 Many modern malware families do not contain a valid PE Import Address Table (IAT). Instead, they:
 
@@ -57,7 +57,6 @@ LOBYTE(v9) = VirtualProtect(a1,a2,v8,*a3,v15,&a8) != 0;
 * Binary search over compressed databases.
 * User-generated import databases.
 * Support for multiple DLL libraries.
-* Incremental database updates.
 * ZLIB-compressed binary storage.
 * Resolve imports at the current cursor address.
 * Resolve imports for a selected memory range.
@@ -77,37 +76,20 @@ LOBYTE(v9) = VirtualProtect(a1,a2,v8,*a3,v15,&a8) != 0;
 8. Load the plugin.
 9. Resolve imported API addresses.
 
-Example Volatility output:
-
-```text
-windows.dlllist
-```
-
-```
-kernel32.dll
-
-Base: 0x7FFF722A0000
-
-ws2_32.dll
-
-Base: 0x7FFF71960000
-
-ntdll.dll
-
-Base: 0x7FFF73F00000
-```
-
 The plugin is intended to be used with DLLs originating from the same memory image or infected system. Therefore, no OS-specific databases are required.
 
 ---
 
-## Creating an Import Database
+# Binary Storage
+
+## Creating an storage
 
 Creating a new database:
 
 ```bash
 python generate_import_db.py <path_to_dumped_dlls> import_storage.bin
 ```
+Plugin requests storage called `import_storage.bin`
 
 The script will ask for the ImageBase:
 
@@ -170,18 +152,7 @@ The final database is compressed using ZLIB to reduce its size.
 
 ## Installing the Plugin
 
-Copy the plugin files into your IDA plugins directory:
-
-```text
-plugins/
-
-│
-├── peless_imports.py
-├── import_storage.bin
-│
-└── import_search/
-    └── __init__.py
-```
+Copy all files from the `plugin` directory into your `IDA plugins` directory
 
 Restart IDA Pro.
 
@@ -189,9 +160,9 @@ The plugin automatically loads the compressed import database during initializat
 
 ---
 
-## Usage
+# Usage
 
-### Resolving a Single Import
+## Resolving a Single Import
 
 Place the cursor on an address containing a function pointer:
 
@@ -215,7 +186,7 @@ The plugin automatically renames the current address and creating comment near o
 
 ---
 
-### Resolving Imports for a Selected Range
+## Resolving Imports for a Selected Range
 
 Select the desired memory range:
 
