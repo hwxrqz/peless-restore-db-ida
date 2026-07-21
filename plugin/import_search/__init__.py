@@ -25,16 +25,11 @@ def LoadImports(file_name):
     with open(file_name, "rb") as f:
 
         compressed = bytes(f.read())
-
         decomp = zlib.decompress(compressed)
 
-        #
-        # Every record is 16 bytes.
-        #
         num_items = len(decomp) // 16
 
         tokens_arr = ImportRecBin * num_items
-
         tokens = tokens_arr.from_buffer_copy(decomp)
 
 
@@ -48,13 +43,28 @@ def FindImport(address):
     if tokens[i].address != address:
         return None
 
-    name = ""
+    fname = ""
 
     for c in decomp[tokens[i].off:]:
 
         if c == 0:
             break
 
-        name += chr(c)
+        fname += chr(c)
 
-    return name
+    return fname
+
+
+def main():
+
+    print("PE-less imports test")
+
+    LoadImports("import_storage.bin")
+
+    print("Database loaded")
+
+    print(FindImport(0x7FFF722A14D0))
+
+
+if __name__ == "__main__":
+    main()
