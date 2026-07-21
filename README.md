@@ -162,7 +162,7 @@ Function names are stored separately in a string table.
 
 Scheme of binary storage:
 
-<img width="527" height="219" alt="image" src="https://github.com/user-attachments/assets/73b389d8-d94f-4e87-952a-ea9f2ecbc49a" />
+<img width="719" height="281" alt="binary_storage" src="https://github.com/user-attachments/assets/95122dfe-fb20-4a89-abed-f764931f5ec6" />
 
 The final database is compressed using ZLIB to reduce its size.
 
