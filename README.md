@@ -106,7 +106,7 @@ The plugin is intended to be used with DLLs originating from the same memory ima
 Creating a new database:
 
 ```bash
-python generate_import_db.py.py <path_to_dumped_dlls> import_storage.bin
+python generate_import_db.py <path_to_dumped_dlls> import_storage.bin
 ```
 
 The script will ask for the ImageBase:
