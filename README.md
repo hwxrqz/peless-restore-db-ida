@@ -112,7 +112,7 @@ python generate_import_db.py <path_to_dumped_dlls> import_storage.bin
 The script will ask for the ImageBase:
 
 ```text
-[*] kernel32.dll ImageBase: 0x7fff722a0000
+[*] kernel32.dll ImageBase: <ImageBase>
 ```
 You may incrementally add as many DLLs as necessary.
 
@@ -144,7 +144,7 @@ recv                -> 0x7FFF71964860
 
 ---
 
-## Binary Database Format
+## Binary Storage Format
 
 Each entry is represented as:
 
@@ -160,8 +160,8 @@ The database is sorted by absolute virtual addresses.
 
 Function names are stored separately in a string table.
 
-Example layout:
-!!! NEED TO ADD PICTURE
+Scheme of binary storage:
+<img width="527" height="219" alt="image" src="https://github.com/user-attachments/assets/73b389d8-d94f-4e87-952a-ea9f2ecbc49a" />
 
 The final database is compressed using ZLIB to reduce its size.
 
@@ -249,7 +249,7 @@ Example output:
 
 ## Demonstration Video
 
-A short video demonstrating the entire workflow is available here:
+A short (or not) video demonstrating the entire workflow is available here:
 
 https://github.com/user-attachments/assets/4896b658-9701-48fa-af28-c9316e2e185e
 
