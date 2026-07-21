@@ -152,7 +152,7 @@ The final database is compressed using ZLIB to reduce its size.
 
 ## Installing the Plugin
 
-Copy all files from the `plugin` directory into your `IDA plugins` directory
+Copy all files from the `plugin` directory & `import_storage.bin` into your `IDA plugins` directory
 
 Restart IDA Pro.
 
