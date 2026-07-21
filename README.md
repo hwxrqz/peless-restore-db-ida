@@ -161,6 +161,7 @@ The database is sorted by absolute virtual addresses.
 Function names are stored separately in a string table.
 
 Scheme of binary storage:
+
 <img width="527" height="219" alt="image" src="https://github.com/user-attachments/assets/73b389d8-d94f-4e87-952a-ea9f2ecbc49a" />
 
 The final database is compressed using ZLIB to reduce its size.
