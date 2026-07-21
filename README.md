@@ -252,7 +252,7 @@ Example output:
 A short video demonstrating the entire workflow is available here:
 
 ```text
-NEED TO ADD LINK
+https://youtu.be/oHmKKz1JZwc
 ```
 
 ---
