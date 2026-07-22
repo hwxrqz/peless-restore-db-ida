@@ -223,7 +223,7 @@ Example output:
 
 A short (or not) video demonstrating the entire workflow is available here:
 
-https://github.com/user-attachments/assets/4896b658-9701-48fa-af28-c9316e2e185e
+[https://github.com/user-attachments/assets/4896b658-9701-48fa-af28-c9316e2e185e](https://github.com/user-attachments/assets/c80d265d-7784-4df7-9caf-5579bbc30959)
 
 ---
 
